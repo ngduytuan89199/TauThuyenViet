@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Src="~/UserControls/ucLink.ascx" TagPrefix="uc1" TagName="ucLink" %>
+<%@ Register Src="~/UserControls/ucMenu.ascx" TagPrefix="uc1" TagName="ucMenu" %>
+<%@ Register Src="~/UserControls/ucFooter.ascx" TagPrefix="uc2" TagName="ucFooter" %>
+<%@ Register Src="~/UserControls/ucScript.ascx" TagPrefix="uc2" TagName="ucScript" %>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <uc1:ucLink runat="server" ID="ucLink" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <uc1:ucMenu runat="server" ID="ucMenu" />
+        <main>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <uc2:ucFooter runat="server" ID="ucFooter" />
+        <uc2:ucScript runat="server" ID="ucScript" />
+        <asp:ContentPlaceHolder ID="Foot" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
